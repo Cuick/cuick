@@ -2,11 +2,43 @@ if !exists(":DiffOrig")
 	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
+syntax on
+
 set t_Co=256
 set mouse=a
+
 set expandtab
+set sw=4
+set tabstop=4
+set softtabstop=4
+
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
+
+set helplang=cn " 设置vim帮助为中文
+set nu
+set cindent
+set smartindent
+set showmatch
+set ignorecase smartcase
+set nowrapscan
+set incsearch
+set hlsearch
+set magic
+set sm
+set backspace=indent,eol,start
+set cmdheight=1
+"imap jk <esc>
+
+set laststatus=2
+set autoread
+"set foldcolumn=2
+"set foldmethod=indent 
+"set foldlevel=5
+set list lcs=tab:>-,trail:-
+
+
+"set guifont=Ubuntu:h12
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -28,14 +60,13 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'sjl/badwolf'
 Plugin 'gregsexton/gitv'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'cespare/vim-toml'
 call vundle#end()
 filetype plugin indent on
 
-set list lcs=tab:>-,trail:-
-
 call pathogen#infect()
 call pathogen#helptags()
-
 
 "powerline{
 " set guifont=PowerlineSymbols\ for\ Powerline
@@ -59,36 +90,9 @@ let g:syntastic_style_error_symbol = "⚠="
 let g:syntastic_auto_jump = 0
 "}
 
-set nu
-set cindent
-set smartindent
-set showmatch
-set ignorecase smartcase
-set nowrapscan
-set incsearch
-set hlsearch
-set magic
-set sm
-set backspace=indent,eol,start
-set cmdheight=1
-"imap jk <esc>
-
-set laststatus=2
-set autoread
-"set foldcolumn=2
-"set foldmethod=indent 
-"set foldlevel=5
-
 "colorscheme inkpot
 "colorscheme molokai
 colorscheme badwolf
-syntax on
-
-"set guifont=Ubuntu:h12
-
-set sw=4
-set tabstop=4
-set softtabstop=4
 
 map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vimrc<cr>
@@ -118,6 +122,9 @@ nmap <c-o><c-p> :CtrlPMRU<cr>
 map <leader>i :NERDTreeToggle <cr>
 let NERDTreeIgnore=['.pyc$', '\~$']
 "let g:NERDTreeShowBookmarks=1
-"let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 1
 "let g:NERDTreeDirArrowExpandable=1
 "let g:NERDTreeDirArrowCollapsible=1
+
+" markdown 取消折叠
+let g:vim_markdown_folding_disabled = 1
