@@ -37,6 +37,11 @@ set autoread
 "set foldlevel=5
 set list lcs=tab:>-,trail:-
 
+set fileencodings=utf-8,gb2312,gbk,gb18030
+set termencoding=utf-8
+set fileformats=unix
+set encoding=utf-8
+
 
 "set guifont=Ubuntu:h12
 
