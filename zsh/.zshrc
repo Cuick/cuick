@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PATH="/usr/local/bin/pypy-5.0.1-linux_x86_64-portable/bin":$PATH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -17,7 +18,7 @@ ZSH_THEME="af-magic"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=1
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -130,10 +131,13 @@ function rtn
 
 alias gp='git pull origin master:master'
 alias gm='git merge origin master'
+alias bird='cd ~/work/bird'
 # alias excel='scp -r server@192.168.1.62:/home/server/traversingConfig/excel ~/Desktop'
 # alias excel1='cp -r ~/work/traversing/config/excel ~/Desktop'
-hash -d tv=~/work/traversing
-hash -d tn=~/work/transfer
-hash -d ts=~/work/transfer/TTransfer/src
+# hash -d tv=~/work/traversing
 export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
+
+# ulimit -c unlimited
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+source ~/.nvm/nvm.sh

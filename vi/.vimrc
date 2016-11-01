@@ -1,5 +1,5 @@
 if !exists(":DiffOrig")
-	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
+    command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
 syntax on
@@ -15,7 +15,7 @@ set softtabstop=4
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 
-set helplang=cn " 设置vim帮助为中文
+set helplang=cn
 set nu
 set cindent
 set smartindent
@@ -28,22 +28,15 @@ set magic
 set sm
 set backspace=indent,eol,start
 set cmdheight=1
-"imap jk <esc>
 
 set laststatus=2
 set autoread
-"set foldcolumn=2
-"set foldmethod=indent 
-"set foldlevel=5
 set list lcs=tab:>-,trail:-
 
 set fileencodings=utf-8,gb2312,gbk,gb18030
 set termencoding=utf-8
 set fileformats=unix
 set encoding=utf-8
-
-
-"set guifont=Ubuntu:h12
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -73,40 +66,25 @@ filetype plugin indent on
 call pathogen#infect()
 call pathogen#helptags()
 
-"powerline{
-" set guifont=PowerlineSymbols\ for\ Powerline
- "set nocompatible set t_Co=256
-"let g:Powerline_symbols = 'fancy'
-"}
-"
-"
 let mapleader=" "
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
-"syntastic{
 execute pathogen#infect()
 let g:syntastic_python_checkers=['flake8']
 let g:ycm_show_diagnostics_ui = 0
-"let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_style_error_symbol = "✗="
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_style_error_symbol = "⚠="
 let g:syntastic_auto_jump = 0
-"}
 
-"colorscheme inkpot
-"colorscheme molokai
 colorscheme badwolf
 
 map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vimrc<cr>
-"map <leader>im :PymodeRopeAutoImport<cr>
 
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-"map  n <Plug>(easymotion-next)
-"map  N <Plug>(easymotion-prev)
 nmap s <Plug>(easymotion-s)
 
 map <Leader>l <Plug>(easymotion-lineforward)
@@ -126,10 +104,25 @@ nmap <c-o><c-p> :CtrlPMRU<cr>
 
 map <leader>i :NERDTreeToggle <cr>
 let NERDTreeIgnore=['.pyc$', '\~$']
-"let g:NERDTreeShowBookmarks=1
 let g:NERDTreeQuitOnOpen = 1
-"let g:NERDTreeDirArrowExpandable=1
-"let g:NERDTreeDirArrowCollapsible=1
-
-" markdown 取消折叠
 let g:vim_markdown_folding_disabled = 1
+
+
+
+
+map <Leader>s :vimgrep <c-r><c-w> **/*.py  <cr>
+map <Leader>f :Ack -i 
+map <Leader>y :y+
+map <Leader>t :tabnew
+
+map <c-k> <c-y><c-y><c-y><cr>
+map <c-j> <c-e><c-e><c-e><cr>
+
+"let g:NERDTreeShowBookmarks=1
+"let g:NERDTreeQuitOnOpen = 1
+""let g:NERDTreeDirArrowExpandable=1
+"let g:NERDTreeDirArrowCollapsible=1
+"
+"" markdown 取消折叠
+let g:vim_markdown_folding_disabled = 1
+let g:pyflakes_use_quickfix = 1
