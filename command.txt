@@ -7,12 +7,45 @@
 
 
 
+============================================================
+         ¡ï Ñ§Ï°Á´½Ó ¡ï
+============================================================
 
+http://www.jianshu.com/notebooks/293635/latest   django + pure
 
+ÉÏÎÄ×÷Õß²©¿Í
+http://andrewliu.in/
 
+====
+twisted£º
+http://blog.chinaunix.net/uid-7684977-id-2569706.html
+https://my.oschina.net/1123581321/blog/160654
+======
 
+http://mclspace.com/
+http://www.cnblogs.com/fakis/
+http://bbs.c114.net/thread-880707-1-1.html ÃæÊÔ¾­Àú
+http://www.acmerblog.com/ acm±ÈÈü
+http://www.oschina.net/project/zh/ ¿ªÔ´ÏîÄ¿¹úÄÚ
+http://python.ctolib.com/
+http://www.cnblogs.com/Wayou/p/requestAnimationFrame.html   html5ÅÜ³µÔ­Àí
+http://developer.egret.com/cn/ HTML5 ÒıÇæ
+http://bbs.zzfriend.com/thread-2738-1-1.html  html5 ´ò·É»ú
+http://www.itmian4.com/forum.php?mod=viewthread&tid=7774&_dsign=4c0bb21e Êéµ¥
+http://www.csdn.net/article/2014-10-27/2822292-how-league-of-legends-scaled-chat-to-70-million-players eralng LOL700ÍòÔÚÏßchat·şÎñÆ÷
+http://blog.csdn.net/neil3d/article/details/39104329 Â¯Ê¯´«Ëµ
+https://toutiao.io/ ¿ª·¢ÕßÍ·Ìõ
+http://www.kuqin.com/shuoit/20151105/348778.html docker
+ejabberdÊÇ»ùÓÚJabber/XMPPĞ­ÒéµÄ¼´Ê±Í¨Ñ¶·şÎñÆ÷£¬ÓÉGPLv2ÊÚÈ¨£¨Ãâ·ÑºÍ¿ª·ÅÔ´Âë£©£¬²ÉÓÃErlang/OTP¿ª·¢¡£ËüµÄÌØµãÊÇ£¬¿çÆ½Ì¨£¬Èİ´í£¬¼¯ÈººÍÄ£¿é»¯
+http://www.wklken.me/posts/2013/08/18/python-extra-functools.html python functoolsÄ£¿é
+http://www.cnblogs.com/qq78292959/archive/2012/05/08/2490443.html  ulimit
 
+http://www.wklken.me/posts/2013/08/17/130-essential-vim-commands.html vim¼¼ÇÉ
 
+===========================================================
+
+ngrok  ÄÚÍø´©Í¸
+WooYun ÍøÂç°²È«Ïà¹Ø
 
 
 
@@ -28,6 +61,10 @@
 ============================================================
 hget stat:2:2016-10-10 in.diamond*
 Ö÷²¥ºÅ£º400 sdiff 'game.2.live.telecast.user'
+barrel_level 54
+pay_total 10000
+hmset props:2:20040 201 10000 202 10000 203 10000 204 10000 205 10000 206 10000 208 10000 209 10000 210 10000 211 10000 212 10000 213 10000 214 10000 215 10000 216 10000 217 10000 218 10000 219 10000 220 10000
+hmset game:2:20040 chip 100000000 diamond 10000000
 
 ================
 
@@ -95,6 +132,9 @@ echo "" > aa && curl -d '{"userId":20001,"chip":3224,"gameId":2,"token":"aXh4b28
 tar -zcvf hello.tar.gz hello.txt
 tar -zxf niuniu.tar.gz
 
+¡ï É¾³ıÏîÄ¿ÏÂËùÓĞsvnÎÄ¼ş
+find . -type d -name ".svn"|xargs rm -rf
+
 ¡ï ssh·´ÏòÁ¬½Ó
 
 ¡ï ngrok
@@ -157,6 +197,9 @@ Unix£¨°üº¬Linux£©µÄ³õÑ§Õß£¬³£³£»áºÜÀ§»ó£¬²»Ã÷°×Ä¿Â¼½á¹¹µÄº¬ÒåºÎÔÚ¡£
 >>>> m=hashlib.md5()
 >>>> m.update('\xe5\xb0\x8f\xe8\x82\x9b\xe8\x82\x9b123456')
 >>>> m.hexdigest()
+
+·´Éä
+×ÔÊ¡
 
 
 ============================================================
@@ -505,35 +548,6 @@ LINUXÓĞËÄÖÖ»ù±¾ÎÄ¼şÏµÍ³ÀàĞÍ£ºÆÕÍ¨ÎÄ¼ş¡¢Ä¿Â¼ÎÄ¼ş¡¢Á¬½ÓÎÄ¼şºÍÌØÊâÎÄ¼ş£¬¿ÉÓÃfileÃüÁ
 
 
 
-===========================================================
-¡ï django + pure
-
-http://www.jianshu.com/notebooks/293635/latest
-
-ÉÏÎÄ×÷Õß²©¿Í
-http://andrewliu.in/
-
-======
-
-http://mclspace.com/
-http://www.cnblogs.com/fakis/
-http://bbs.c114.net/thread-880707-1-1.html ÃæÊÔ¾­Àú
-http://www.acmerblog.com/ acm±ÈÈü
-http://www.oschina.net/project/zh/ ¿ªÔ´ÏîÄ¿¹úÄÚ
-http://python.ctolib.com/
-http://www.cnblogs.com/Wayou/p/requestAnimationFrame.html   html5ÅÜ³µÔ­Àí
-http://developer.egret.com/cn/ HTML5 ÒıÇæ
-http://bbs.zzfriend.com/thread-2738-1-1.html  html5 ´ò·É»ú
-vr ar vr ar vr ar
-====
-twisted£º
-http://blog.chinaunix.net/uid-7684977-id-2569706.html
-https://my.oschina.net/1123581321/blog/160654
-
-
-===========================================================
-¡ï ulimit
-http://www.cnblogs.com/qq78292959/archive/2012/05/08/2490443.html
 
 ===========================================================
 ¡ï vim Ìæ»»
@@ -609,10 +623,19 @@ p ±íÊ¾Ìæ´ú½á¹ûÖğĞĞÏÔÊ¾£¨Ctrl + L»Ö¸´ÆÁÄ»£©£»
 ¿Õ¼ä¸´ÔÓ¶È£ºÖ´ĞĞÕâ¸öËã·¨ËùĞèÒªµÄÄÚ´æ¿Õ¼ä
 
 
+========================================================
 
 
+³ÉÎªÒ»¸öÖ÷³Ì»¹ĞèÒªÊ²Ã´
+¼Ü¹¹ÂöÂçÃ÷°×ÁË£¬µ«ÊÇÏ¸½Ú¸ù±¾²»ÊìÏ¤¡£
+¼ÌĞøÑĞ¾¿ÕâÌ×·şÎñÆ÷£¬²¢ÉîÈëÑ§Ï°python¡£
+twisted£¬stackless ÊµÏÖ
+==
+Õâ¼¸Ìì·¢ÏÖ£¬Ì°¶àµÄÈ¥Ñ§ÓïÑÔÃ»ÓĞÓÃ£¬¶¼Ö»ÊÇÑ§Ï°ÁËÒ»Ğ©Æ¤Ã«£¬Ö»ÊÇÑ§ÁËĞ©Óï·¨¡£
+Ó¦¸ÃÄÍÏÂĞÄÀ´ °ÑÊÖÀïÔÚÓÃµÄÑ§ÔúÊµ£¬
 
-
+VRÊ±´ú¾ÍÒªµ½ÁË
+È«ÃñVRµÄÊ±ºò ĞÂµÄ´´ĞÂ»úÓö
 
 
 

@@ -1,0 +1,181 @@
+
+
+
+1 报错
+
+
+
+
+~/.vim/bundle/YouCompleteMe(branch:master) ? sudo ./install.sh                                                                                                                                                                                         ubuntu@VM-169-204-ubuntu
+WARNING: this script is deprecated. Use the install.py script instead.
+Searching Python 2.7 libraries...
+Found Python library: /usr/lib/python2.7/config-x86_64-linux-gnu/libpython2.7.so
+Found Python headers folder: /usr/include/python2.7
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+Your C++ compiler supports C++11, compiling in that mode.
+CMake Error at /usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake:108 (message):
+  Could NOT find PythonLibs (missing: PYTHON_INCLUDE_DIRS) (Required is at
+  least version "2.6")
+Call Stack (most recent call first):
+  /usr/share/cmake-2.8/Modules/FindPackageHandleStandardArgs.cmake:315 (_FPHSA_FAILURE_MESSAGE)
+  /usr/share/cmake-2.8/Modules/FindPythonLibs.cmake:208 (FIND_PACKAGE_HANDLE_STANDARD_ARGS)
+  CMakeLists.txt:198 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/tmp/ycm_build_wYph6M/CMakeFiles/CMakeOutput.log".
+ERROR: the build failed.
+
+NOTE: it is *highly* unlikely that this is a bug but rather
+that this is a problem with the configuration of your system
+or a missing dependency. Please carefully read CONTRIBUTING.md
+and if you're sure that it is a bug, please raise an issue on the
+issue tracker, including the entire output of this script
+and the invocation line used to run it.
+
+
+Has been solved through this
+
+
+解决：升级cmake版本
+http://blog.csdn.net/swx1477572187/article/details/51024161
+
+
+2 报错
+
+Found Python headers folder: /usr/include/python2.7
+-- The C compiler identification is GNU 4.8.4
+-- The CXX compiler identification is GNU 4.8.4
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Your C++ compiler supports C++11, compiling in that mode.
+-- Found PythonLibs: /usr/lib/python2.7/config-x86_64-linux-gnu/libpython2.7.so (Required is at least version "2.6")
+Using libclang to provide semantic completion for C/C++/ObjC
+Using external libclang: /usr/lib/x86_64-linux-gnu/libclang-3.4.so.1
+-- Found PythonInterp: /usr/bin/python2.7 (found version "2.7.6")
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/ycm_build_18mApK
+Scanning dependencies of target BoostParts
+[  0%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/atomic/src/lockpool.cpp.o
+[  1%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/chrono/src/chrono.cpp.o
+[  1%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/chrono/src/process_cpu_clocks.cpp.o
+[  2%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/chrono/src/thread_clock.cpp.o
+[  3%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/date_time/src/gregorian/date_generators.cpp.o
+[  3%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/date_time/src/gregorian/greg_month.cpp.o
+[  4%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/date_time/src/gregorian/greg_weekday.cpp.o
+[  5%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/date_time/src/gregorian/gregorian_types.cpp.o
+[  5%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/date_time/src/posix_time/posix_time_types.cpp.o
+[  7%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/exception/src/clone_current_exception_non_intrusive.cpp.o
+[  7%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/codecvt_error_category.cpp.o
+[  8%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/operations.cpp.o
+[  9%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/path.cpp.o
+[  9%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/path_traits.cpp.o
+[ 10%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/portability.cpp.o
+[ 11%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/unique_path.cpp.o
+[ 11%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/utf8_codecvt_facet.cpp.o
+[ 13%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/filesystem/src/windows_file_codecvt.cpp.o
+[ 14%] Building CXX object BoostParts/CMakeFiles/BoostParts.dir/libs/python/src/converter/arg_to_python_base.cpp.o
+In file included from /home/ubuntu/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts/boost/python/detail/prefix.hpp:13:0,
+                 from /home/ubuntu/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts/boost/python/handle.hpp:8,
+                 from /home/ubuntu/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts/boost/python/converter/arg_to_python_base.hpp:7,
+                 from /home/ubuntu/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts/libs/python/src/converter/arg_to_python_base.cpp:6:
+/home/ubuntu/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/BoostParts/boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+make[3]: *** [BoostParts/CMakeFiles/BoostParts.dir/libs/python/src/converter/arg_to_python_base.cpp.o] Error 1
+make[2]: *** [BoostParts/CMakeFiles/BoostParts.dir/all] Error 2
+make[1]: *** [ycm/CMakeFiles/ycm_core.dir/rule] Error 2
+make: *** [ycm_core] Error 2
+ERROR: the build failed.
+
+
+解决：sudo apt-get install python-dev libxml2-dev libxslt-dev
+
+
+3报错
+
+Scanning dependencies of target ycm_core
+[ 83%] Building CXX object ycm/CMakeFiles/ycm_core.dir/Candidate.cpp.o
+[ 84%] Building CXX object ycm/CMakeFiles/ycm_core.dir/CandidateRepository.cpp.o
+[ 85%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/ClangCompleter.cpp.o
+[ 85%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/ClangHelpers.cpp.o
+[ 86%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/ClangUtils.cpp.o
+[ 88%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/CompilationDatabase.cpp.o
+[ 88%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/CompletionData.cpp.o
+[ 89%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/Documentation.cpp.o
+[ 89%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/Range.cpp.o
+[ 90%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/TranslationUnit.cpp.o
+[ 91%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ClangCompleter/TranslationUnitStore.cpp.o
+[ 91%] Building CXX object ycm/CMakeFiles/ycm_core.dir/CustomAssert.cpp.o
+[ 92%] Building CXX object ycm/CMakeFiles/ycm_core.dir/IdentifierCompleter.cpp.o
+[ 94%] Building CXX object ycm/CMakeFiles/ycm_core.dir/IdentifierDatabase.cpp.o
+[ 94%] Building CXX object ycm/CMakeFiles/ycm_core.dir/IdentifierUtils.cpp.o
+[ 95%] Building CXX object ycm/CMakeFiles/ycm_core.dir/LetterNode.cpp.o
+[ 95%] Building CXX object ycm/CMakeFiles/ycm_core.dir/LetterNodeListMap.cpp.o
+[ 96%] Building CXX object ycm/CMakeFiles/ycm_core.dir/PythonSupport.cpp.o
+[ 97%] Building CXX object ycm/CMakeFiles/ycm_core.dir/Result.cpp.o
+[ 97%] Building CXX object ycm/CMakeFiles/ycm_core.dir/Utils.cpp.o
+[ 98%] Building CXX object ycm/CMakeFiles/ycm_core.dir/versioning.cpp.o
+[100%] Building CXX object ycm/CMakeFiles/ycm_core.dir/ycm_core.cpp.o
+virtual memory exhausted: Cannot allocate memory
+make[3]: *** [ycm/CMakeFiles/ycm_core.dir/ycm_core.cpp.o] Error 1
+make[2]: *** [ycm/CMakeFiles/ycm_core.dir/all] Error 2
+make[1]: *** [ycm/CMakeFiles/ycm_core.dir/rule] Error 2
+make: *** [ycm_core] Error 2
+ERROR: the build failed.
+
+
+解决：
+内错不够，
+http://blog.csdn.net/s170262941/article/details/18139795
+
+
+
+
+vim 提示：
+YouCompleteMe unavailable: requires Vim 7.4.143+
+
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install vim
+
+
+http://www.voidcn.com/blog/u012675539/article/p-5984758.html
+
+
+
+
+
+
+
+
