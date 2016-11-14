@@ -1,3 +1,5 @@
+sudo ./install.sh --clang-completer
+
 
 
 
@@ -161,16 +163,20 @@ http://blog.csdn.net/s170262941/article/details/18139795
 
 
 
+===================
 
 vim 提示：
 YouCompleteMe unavailable: requires Vim 7.4.143+
 
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install vim
-
-
 http://www.voidcn.com/blog/u012675539/article/p-5984758.html
+
+编译安装vim
+git clone https://github.com/vim/vim.git
+sudo ./configure --with-features=huge --enable-rubyinterp --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.7/python2.7/config-x86_64-linux-gnu/ --enable-perlinterp --enable-gui=gtk2 --enable-cscope --enable-luainterp --enable-perlinterp --enable-multibyte --prefix=/usr
+
+sudo make
+
+sudo make install
 
 
 
