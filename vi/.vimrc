@@ -1,3 +1,8 @@
+" 下载pathogen：https://github.com/tpope/vim-pathogen;
+" 把vim-pathogen/autoload/pathogen.vim文件，将其复制到.vim/autoload目录下;
+" git clone https://github.com/gmarik/vundle.git
+" sudo apt-get install ack-grep
+
 if !exists(":DiffOrig")
     command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
@@ -15,7 +20,6 @@ set softtabstop=4
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 
-set helplang=cn
 set nu
 set cindent
 set smartindent
@@ -60,29 +64,61 @@ Plugin 'sjl/badwolf'
 Plugin 'gregsexton/gitv'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'cespare/vim-toml'
+Plugin 'iamcco/dict.vim'
+Plugin 'asins/vimcdoc'
+Plugin 'bling/vim-airline'
 call vundle#end()
-filetype plugin indent on
-
-call pathogen#infect()
-call pathogen#helptags()
 
 let mapleader=" "
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+filetype plugin indent on
 
-execute pathogen#infect()
-let g:syntastic_python_checkers=['flake8']
+" pathogen 功能 ==========================
+" execute pathogen#infect()
+" call pathogen#infect()
+" call pathogen#helptags()
+
+" YouCompleteMe 功能 ==========================
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py' "
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" 补全功能在注释中同样有效
+let g:ycm_complete_in_comments=1
+" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示  
+let g:ycm_confirm_extra_conf=0
+" 开启 YCM 基于标签引擎
+let g:ycm_collect_identifiers_from_tags_files=1
+" 引入 C++
+" 标准库tags，这个没有也没关系，只要.ycm_extra_conf.py文件中指定了正确的标准库路径
+"set tags+=/data/misc/software/misc./vim/stdcpp.tags
+" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+inoremap <leader>; <C-x><C-o>
+" 补全内容不以分割子窗口形式出现，只显示补全列表
+set completeopt-=preview
+" 从第一个键入字符就开始罗列匹配项
+let g:ycm_min_num_of_chars_for_completion=2
+" 禁止缓存匹配项，每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+" 关闭ycm的syntastic
 let g:ycm_show_diagnostics_ui = 0
+
+" syntastic 功能 ============================
+let g:syntastic_python_checkers=['flake8']
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_style_error_symbol = "✗="
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_style_error_symbol = "⚠="
 let g:syntastic_auto_jump = 0
 
+" 主题
 colorscheme badwolf
 
 map <silent> <leader>ss :source ~/.vimrc<cr>
 map <silent> <leader>ee :e ~/.vimrc<cr>
 
+" easymotion超级好用跳转插件
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 nmap s <Plug>(easymotion-s)
@@ -95,10 +131,8 @@ map <Leader>s :vimgrep <c-r><c-w> **/*.py  <cr>
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" ctrlp 超级好用文件查找插件
 nmap <c-p><c-p> :CtrlPQuickfix<cr>
 nmap <c-o><c-p> :CtrlPMRU<cr>
 
@@ -108,12 +142,11 @@ let g:NERDTreeQuitOnOpen = 1
 let g:vim_markdown_folding_disabled = 1
 
 
-
-
 map <Leader>s :vimgrep <c-r><c-w> **/*.py  <cr>
 map <Leader>f :Ack -i 
 map <Leader>y :y+
 map <Leader>t :tabnew
+map <Leader>m :set mouse=v
 
 map <c-k> <c-y><c-y><c-y><cr>
 map <c-j> <c-e><c-e><c-e><cr>
@@ -126,3 +159,8 @@ map <c-j> <c-e><c-e><c-e><cr>
 "" markdown 取消折叠
 let g:vim_markdown_folding_disabled = 1
 let g:pyflakes_use_quickfix = 1
+
+" 设定 doc 文档目录  vimcdoc 插件
+let helptags=$VIM."/vimfiles/doc"
+set helplang=cn
+" :marks
