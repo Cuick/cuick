@@ -27,4 +27,13 @@
     game.%d.live.telecast.user
 
 5. redis 关键字
-fake.bonus.count  抽奖 奖金鸟个数 包括奖金鸟和boss
+
+    fake.bonus.count  抽奖 奖金鸟个数 包括奖金鸟和boss  
+
+    area_key = 'area:%d:%d' % (gid, area_id)  
+    hgetall area:2:1001
+    1) "full_table_info"
+    2) "[1479283546,30,48,25,36,44,7,46,50,23,47,40,39,12]"
+    3) "1"
+    4) "1001"
+
