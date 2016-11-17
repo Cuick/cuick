@@ -2,6 +2,7 @@
 " 把vim-pathogen/autoload/pathogen.vim文件，将其复制到.vim/autoload目录下;
 " git clone https://github.com/gmarik/vundle.git
 " sudo apt-get install ack-grep
+" sudo pip install flake8
 
 if !exists(":DiffOrig")
     command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
