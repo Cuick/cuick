@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://118.24.149.39:8000/江淮安徽麻将_TargetVT.ipa</string>
+					<string>http://118.24.149.39:8000/argetVTttttttttttt.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>http://118.24.149.39:8000/iOSAppIcon60x60@2x.png</string>
+					<string>http://118.24.149.39:8000/iOSAppIconnnnnn.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>http://118.24.149.39:8000/iOSAppIcon60x60@2x.png</string>
+					<string>http://118.24.149.39:8000/iOSAppIconnnnnn.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
@@ -39,9 +39,9 @@
 				<key>kind</key>
 				<string>software</string>
 				<key>subtitle</key>
-				<string>desjilin</string>
+				<string>anhuimajiang</string>
 				<key>title</key>
-				<string>desjilin</string>
+				<string>anhuimajiang</string>
 			</dict>
 		</dict>
 	</array>
