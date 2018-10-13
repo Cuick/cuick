@@ -1,0 +1,233 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" sudo apt-get install ack-grep
+" sudo pip install flake8
+
+if !exists(":DiffOrig")
+    command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
+endif
+
+syntax on "自动语法高亮
+set number
+set ruler
+set t_Co=256 "256色
+set mouse=a "a鼠标 v无鼠标
+
+set sw=4
+set tabstop=4 "tab键的宽度
+set softtabstop=4 "使得按退格键可以一次删掉4个空格"
+set shiftwidth=4 "统一缩进为
+set expandtab "不要用空格替代制表符"
+
+set nocompatible ""兼容的
+set rtp+=~/.vim/bundle/Vundle.vim
+
+set nu "显示行号"
+set cindent
+set showmatch "高亮显示对应的括号
+set matchtime=5 "对应括号高亮时间(单位是十分之一秒)"
+set ignorecase smartcase ""搜索忽略大小写
+set nowrapscan
+set incsearch "搜素高亮,搜索逐渐高亮"
+set hlsearch "搜索时高亮被查找到的文本"
+set hidden " 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存
+set gdefault "行内替换“
+set magic
+set sm
+set backspace=indent,eol,start
+set cmdheight=1
+
+set laststatus=2
+set autoread
+set list lcs=tab:>-,trail:-
+
+set fileencodings=utf-8,gb2312,gbk,gb18030
+set termencoding=utf-8
+set fileformats=unix
+set encoding=utf-8
+set guifont=Menlo:h16:cANSI "设置字体
+
+"用浅色高亮当前行"
+autocmd InsertLeave * se nocul
+autocmd InsertEnter * se cul
+
+set smartindent "智能对齐
+set autoindent "自动对齐
+set confirm "在处理未保存或只读文件的时候，弹出确认框
+set ruler "在编辑过程中，在右下角显示光标位置的状态行“
+set scrolloff=3 "光标移动到buffer的顶部和底部时保持3行的距离"
+
+"set autowrite "在切换buffer时自动保存当前文件
+"set wildmenu  "增强模式中的命令行自动完成操作
+"set linespace=2 "字符间插入的像素行数目
+"set history=50  "历史纪录数
+"set whichwrap=b,s,<,>,[,] "开启normal 或visual模式下的backspace键空格键，左右方向键,insert或replace模式下的左方向键，右方向键的跳行功能
+
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/vimproc.vim'
+" 显示垂直线
+Plugin 'vim-scripts/indentLine.vim'
+" 多行选中功能
+Plugin 'terryma/vim-multiple-cursors'
+" git包装器
+" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'iamcco/dict.vim'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mhinz/vim-signify'
+Plugin 'rking/ag.vim'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'scrooloose/nerdcommenter' "注释代码工具 \cc注释当前行 \cu 撤销注释当前行 \cs sexily注释 \cA 行尾注释，切换成输入模式 
+Plugin 'jiangmiao/auto-pairs' " 括号自动匹配
+
+" Plugin 'Valloric/YouCompleteMe'
+
+" html 快捷
+" Plugin 'mattn/emmet-vim'
+
+" Plugin 'tpope/vim-git'
+" Plugin 'gregsexton/gitv'
+" Plugin 'Shougo/vimshell.vim'
+" Plugin 'plasticboy/vim-markdown'
+" Plugin 'cespare/vim-toml'
+" Plugin 'sjl/badwolf'
+" Plugin 'asins/vimcdoc'
+" Plugin 'mileszs/ack.vim'
+call vundle#end()
+
+let mapleader=" "
+filetype plugin indent on "分为三部分命令:file on,file plugin on,file indent on 分别是自动识别文件类型, 用用文件类型脚本,使用缩进定义文件
+
+" set autochdir "自动切换当前目录位当前文件所在目录
+set foldenable  "允许折叠
+"set foldmethod=syntax "设置语法折叠
+"set foldcolumn=0 "设置折叠区域的宽度
+"setlocal foldlevel=1 "设置折叠层数为
+"set cursorline "突出显示当前行, 使用后导致我ctrl jk 快速移动的时候卡
+
+
+" pathogen 功能 ==========================
+" execute pathogen#infect()
+" call pathogen#infect()
+" call pathogen#helptags()
+"
+
+" YouCompleteMe 功能 ==========================
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_python_binary_path = 'python'
+
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py' "
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" 补全功能在注释中同样有效
+let g:ycm_complete_in_comments=1
+" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示  
+let g:ycm_confirm_extra_conf=0
+" 开启 YCM 基于标签引擎
+let g:ycm_collect_identifiers_from_tags_files=1
+" 引入 C++
+" 标准库tags，这个没有也没关系，只要.ycm_extra_conf.py文件中指定了正确的标准库路径
+"set tags+=/data/misc/software/misc./vim/stdcpp.tags
+" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
+inoremap <leader>; <C-x><C-o>
+" 补全内容不以分割子窗口形式出现，只显示补全列表
+set completeopt-=preview
+" 从第一个键入字符就开始罗列匹配项
+let g:ycm_min_num_of_chars_for_completion=2
+" 禁止缓存匹配项，每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+" 关闭ycm的syntastic
+" let g:ycm_show_diagnostics_ui = 0
+
+" syntastic 功能 ============================
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_style_error_symbol = "✗="
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_style_error_symbol = "⚠="
+let g:syntastic_auto_jump = 0
+let g:flake8_max_line_length = 150
+
+" 主题
+" colorscheme badwolf
+colorscheme solarized
+" colorscheme torte
+" syntax enable
+set background=dark
+" set background=light
+
+map <silent> <leader>ss :source ~/.vimrc<cr>
+map <silent> <leader>ee :e ~/.vimrc<cr>
+
+" easymotion超级好用跳转插件
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+nmap s <Plug>(easymotion-s)
+
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>s :vimgrep <c-r><c-w> **/*.py  <cr>
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
+
+" ctrlp 文件查找插件
+nmap <c-p><c-p> :CtrlPQuickfix<cr>
+nmap <c-o><c-p> :CtrlPMRU<cr>
+let g:ctrlp_working_path_mode = 0
+
+" NERDTree
+map <leader>i :NERDTreeToggle <cr>
+let NERDTreeIgnore=['.pyc$', '\~$']
+let g:NERDTreeQuitOnOpen = 1
+let g:vim_markdown_folding_disabled = 1
+"let NERDTreeShowBookmarks=1 "显示书签
+
+" ag
+" let g:ag_working_path_mode="r"
+" let g:ag_prg="<custom-ag-path-goes-here> --vimgrep"
+set runtimepath^=~/.vim/bundle/ag
+
+if executable("ag")
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+let g:ctrlp_show_hidden = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*
+
+
+map <Leader>s :vimgrep <c-r><c-w> **/*.py  <cr>
+map <Leader>f :Ag -i 
+map <Leader>y :y+
+map <Leader>t :tabnew
+map <Leader>m :set mouse=v
+nnoremap <leader>ma :set mouse=a<cr>
+nnoremap <leader>mv :set mouse=v<cr>
+map <c-k> <c-y><c-y><c-y><cr>
+map <c-j> <c-e><c-e><c-e><cr>
+" map <C-c> :'<,'>:w !cat \| nc 172.16.4.132 2999 <cr>
+
+"let g:NERDTreeShowBookmarks=1
+"let g:NERDTreeQuitOnOpen = 1
+""let g:NERDTreeDirArrowExpandable=1
+"let g:NERDTreeDirArrowCollapsible=1
+"
+"" markdown 取消折叠
+let g:vim_markdown_folding_disabled = 1
+let g:pyflakes_use_quickfix = 1
+
+" 设定 doc 文档目录  vimcdoc 插件
+" let helptags=$VIM."/vimfiles/doc"
+"set helplang=cn
+" :marks
